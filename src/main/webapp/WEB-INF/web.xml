@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="MyWebApp" version="2.5">
-  <display-name>Velocity</display-name>
+  <display-name>Velocity2</display-name>
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath*:/spring/applicationContext.xml</param-value>
-    
   </context-param>
-  
-    
   
   <servlet>
     <servlet-name>hi</servlet-name>
@@ -16,12 +13,12 @@
       <param-name>org.apache.velocity.properties</param-name>
       <param-value>/WEB-INF/velocity.properties</param-value>
     </init-param>
-    <!-- 引入toolbox.xml
+    <!-- 引入toolbox.xml -->
     <init-param> 
 		<param-name>org.apache.velocity.toolbox</param-name> 
 		<param-value>/WEB-INF/toolbox.xml</param-value>      
 	</init-param>
-	 -->
+	
   </servlet>
   <servlet-mapping>
     <servlet-name>hi</servlet-name>

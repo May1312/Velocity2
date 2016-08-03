@@ -19,10 +19,14 @@
 	$name</br>
 	$message</br>
 	<h2>你好，everyone</h2></br>
-	$list</br>
-	$list.get(0)</br>
-	<he>i18n</h2>
-	#springMessage('hello.world') </br>
-	$!{msg.get("hello.world")}
+	
+	
+	<he>i18n</h2></br>
+	$i18n.get('hello.world') </br>
+	
+	
+	<hr>
+	${i18n.getName("")}</br>
+	${i18n.get("hello.world")}</br>
 </body>
 </html>
