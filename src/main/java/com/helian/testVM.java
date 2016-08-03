@@ -1,5 +1,6 @@
 package com.helian;
 
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -25,18 +26,18 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 public class testVM extends VelocityViewServlet {
 
     /**
-	 * 
+	 * Velocity实现simple的i18n
 	 */
 	private static final long serialVersionUID = 1L;
 
-    protected Template handleRequest(HttpServletRequest request, HttpServletResponse response, Context ctx) {
-        ctx.put("name", "道森.杰克");
-        ctx.put("message","my heart");
-       // List<Object> list = new ArrayList<Object>();
-        //list.add("yesterday");
-       // ctx.put("list", list);
-        System.out.println("道森。杰克");
-        
+    protected Template handleRequest(HttpServletRequest request, HttpServletResponse response, Context context) {
+    	//设置的值可以在页面取出
+    	context.put("name", "杰森.伯恩");
+    	context.put("message","my heart");
+        System.out.println("杰森.伯恩");
+        //从请求的Request中获取用户的语言   ？？？经过代理会失效么    并存放起来
+         Locale locale = request.getLocale();
+         LocaleUtil.setLocale(locale);
         Template template = getTemplate("show.vm");
         return template;
     }
@@ -45,34 +46,21 @@ public class testVM extends VelocityViewServlet {
     	return "hang";
     }
     
-    @Test
-    public void test(){
-    	String string = get("hello.world");
-    	System.out.println(string);
-    }
     public String get(String key) {
-        try {
         	//ApplicationContext  context = new ClassPathXmlApplicationContext("spring/applicationContext.xml");
            // MessageSource messageSource = (MessageSource) context.getBean("messageSource");
-           // if (messageSource != null) {
             	//获取所在地区语言
-            	Locale locale2 = Locale.getDefault();  
-
-            	Locale locale3 = new Locale("zh", "CN"); 
-            	ResourceBundle messages =ResourceBundle.getBundle("i18n/abc", locale3);
+            	Locale locale = LocaleUtil.getLocale();
+            	//加载src目录下的资源文件
+            	ResourceBundle messages =ResourceBundle.getBundle("i18n/abc", locale);
             	String message = messages.getString(key);
             	System.out.println(message);
              //  String message = messageSource.getMessage(key, args, key, locale2);
                
                return message;
-          //  }
-          //  return key;
-        } catch (NoSuchMessageException e) {
-            return key;
-        }
     }
 
-    }
+}
     
 //加载spring
     
