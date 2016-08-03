@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<toolbox>
+	
+	<tool>
+		<key>i18n</key>
+		<scope>application</scope>
+		<class>com.helian.testVM</class>
+	</tool>
+	<tool>
+	     <key>link</key>
+	     <scope>request</scope>
+	     <class>
+	       org.apache.velocity.tools.struts.StrutsLinkTool
+	     </class>
+   </tool>
+  <!-- <tool>
+     <key>msg</key>
+     <scope>request</scope>
+     <class>
+       org.apache.velocity.tools.struts.MessageTool
+     </class>
+  </tool> -->
+</toolbox>

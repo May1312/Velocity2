@@ -27,6 +27,8 @@ public class testVM extends VelocityViewServlet {
 
     /**
 	 * Velocity实现simple的i18n
+	 * mvn clean 
+	 * mvn package -Dmaven.skip.test=true
 	 */
 	private static final long serialVersionUID = 1L;
 
