@@ -4,7 +4,6 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;    
 
-import org.junit.Test;
 public class helloWorld extends HttpServlet {
     /**
 	 * 
@@ -31,7 +30,6 @@ public class helloWorld extends HttpServlet {
         out.println("</body>");
         out.println("</html>");
     }
-    @Test
     public void run(){
     	String url = "http://www.baidu.com?name=zhang&age=18";
     	int indexOf = url.indexOf("?");

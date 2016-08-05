@@ -1,0 +1,19 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>show VM</title>
+</head>
+<body>
+	<h2>你好，everyone</h2></br>
+	
+	
+	<he>i18n</h2></br>
+	$i18n.get('Welcome.to.PEK') </br>
+	
+	
+	<hr>
+	${i18n.getName("")}</br>
+	${i18n.get("Welcome.to.PEK")}</br>
+</body>
+</html>
